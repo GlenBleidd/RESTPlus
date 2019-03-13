@@ -6,9 +6,11 @@ from flask_script import Manager
 
 from app.main import create_app, db
 from app.main.model import models
+from app import blueprint
 
 app = create_app('dev')
-
+app.app_context().push()
+app.register_blueprint(blueprint)
 app.app_context().push()
 
 manager = Manager(app)
