@@ -9,7 +9,6 @@ from app.main.model import models
 from app import blueprint
 
 app = create_app('dev')
-app.app_context().push()
 app.register_blueprint(blueprint)
 app.app_context().push()
 
